@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FFF9FA;
+    color: #4A1525;
+    overflow-x: hidden;
+    selection-background-color: rgba(244, 114, 182, 0.25);
+    selection-color: #881337;
+  }
+}
+
+/* Custom Soft Romantic Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF0F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #F9A8D4;
+  border-radius: 9999px;
+  border: 2px solid #FFF0F3;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F43F5E;
+}
+
+/* Scrapbook and Romantic Utility Styles */
+.romantic-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 227, 232, 0.85);
+  box-shadow: 0 12px 36px -8px rgba(224, 83, 117, 0.08), 0 4px 12px -2px rgba(99, 139, 111, 0.04);
+}
+
+.scrapbook-card {
+  box-shadow: 0 14px 30px -10px rgba(74, 21, 37, 0.12), 0 4px 10px -2px rgba(74, 21, 37, 0.05);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scrapbook-card:hover {
+  transform: translateY(-6px) rotate(0deg) scale(1.02) !important;
+  box-shadow: 0 22px 42px -12px rgba(225, 29, 72, 0.2), 0 8px 16px -4px rgba(74, 124, 89, 0.12);
+}
+
+/* Washi Tape Decors */
+.washi-tape-pink {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 182, 193, 0.85),
+    rgba(255, 182, 193, 0.85) 10px,
+    rgba(255, 218, 224, 0.85) 10px,
+    rgba(255, 218, 224, 0.85) 20px
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(2px);
+}
+
+.washi-tape-sage {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(195, 219, 197, 0.88),
+    rgba(195, 219, 197, 0.88) 10px,
+    rgba(225, 240, 226, 0.88) 10px,
+    rgba(225, 240, 226, 0.88) 20px
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(2px);
+}
+
+.washi-tape-gold {
+  background: linear-gradient(135deg, rgba(254, 240, 199, 0.9) 0%, rgba(253, 224, 140, 0.9) 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Keyframe Animations */
+@keyframes heartGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.4));
+  }
+  50% {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 14px rgba(244, 63, 94, 0.75));
+  }
+}
+
+.animate-heart-glow {
+  animation: heartGlow 2.4s ease-in-out infinite;
+}
+
+@keyframes gentleSway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.animate-gentle-sway {
+  animation: gentleSway 4s ease-in-out infinite;
+}
+
+@keyframes shakeCute {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px) rotate(-1deg); }
+  40% { transform: translateX(8px) rotate(1deg); }
+  60% { transform: translateX(-6px) rotate(-0.5deg); }
+  80% { transform: translateX(6px) rotate(0.5deg); }
+}
+
+.animate-shake-error {
+  animation: shakeCute 0.5s ease-in-out;
+}
+
+@keyframes butterflyFlutter {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scaleX(1);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-3deg) scaleX(0.75);
+  }
+  50% {
+    transform: translateY(-2px) rotate(2deg) scaleX(1);
+  }
+  75% {
+    transform: translateY(-6px) rotate(1deg) scaleX(0.8);
+  }
+}
+
+.animate-butterfly {
+  animation: butterflyFlutter 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
